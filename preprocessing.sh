@@ -32,7 +32,7 @@ flirt -in flair_iso_biascorrected.nii -ref t1w_iso_biascorrected.nii -out flair_
 flirt -in flair_iso_biascorrected_reg2T1w.nii -ref t1w_iso_biascorrected.nii -out flair_iso_biascorrected_reg2T1w.nii
 
 # Run Samseg for WMH segmentation
-run_samseg --input flair_iso_biascorrected_reg2T1w.nii 1w_iso_biascorrected.nii --lesion --lesion-mask-pattern 1 0  --threshold 0.3 --output ./ --threads 6 
+run_samseg --input flair_iso_biascorrected_reg2T1w.nii t1w_iso_biascorrected.nii --lesion --lesion-mask-pattern 1 0  --threshold 0.3 --output ./ --threads 6 
 mri_convert seg.mgz seg.nii
 
 # Run HD-bet for brain mask segmentation
