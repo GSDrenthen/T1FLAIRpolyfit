@@ -74,3 +74,5 @@ mrcalc \
 	t1w_iso_biascorrected_brain_mask.nii -multiply \
 	T1FLAIR-ratio.nii -nthreads 12 -force	
 
+Myelin_poly_val=$(python -c "from polyfit22 import polyfit22; print(polyfit22('t1w_iso_biascorrected_calib.nii','flair_iso_biascorrected_calib_reg2T1w.nii','seg.nii'))")
+echo $Myelin_poly_val
